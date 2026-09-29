@@ -3,8 +3,9 @@ Computer Vision (Instructor : Professor Chiou-Shann Fuh 傅楸善教授)
 
 Course website : https://cv2.csie.ntu.edu.tw/CV/
 
-Template image for homework : https://cv2.csie.ntu.edu.tw/CV/_material/hw_template_vs2015.zip
-[lena.bmp](https://github.com/user-attachments/files/32792413/lena.bmp)
+Template image for homework : https://drive.google.com/file/d/1z5uplEmUDPHlZCarauDiMVHnQl1m7_Bv/view?usp=sharing
+
+[lena.bmp](https://github.com/user-attachments/files/32793028/lena.bmp)
 
 Archive of my homework record in NTU Computer Vision.
 
