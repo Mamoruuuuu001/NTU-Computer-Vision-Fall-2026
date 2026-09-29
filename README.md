@@ -12,4 +12,5 @@ Archive of my homework record in NTU Computer Vision.
 **Please write your homework by yourself, I am not responsible for anything bad from improper use and copying from this repository.**
 
 You can use this for self-study and reference tho, feel free to take a look *wink wink*
+
 <img width="422" height="267" alt="image" src="https://github.com/user-attachments/assets/717e59e2-d2a9-4294-bc88-e76ba8abbb03" />
