@@ -62,7 +62,11 @@ def equalize(img, hist):
     total = h * w
 
     cdf = np.cumsum(hist)
-    cdf_min = cdf[np.nonzero(hist)[0][0]]
+    cdf_min = 0
+    for v in range(256):
+        if hist[v] != 0:
+            cdf_min = cdf[v]
+            break
 
     lut = [0] * 256
     for v in range(256):
