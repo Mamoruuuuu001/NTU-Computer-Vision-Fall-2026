@@ -11,6 +11,19 @@ OCTAGON = [(dy, dx)
 J_KERNEL = [(0, 0), (0, -1), (1, 0)]
 K_KERNEL = [(-1, 0), (-1, 1), (0, 1)]
 
+
+# Binarization (from earlier homework): returns 0 / 255
+def binarize(img):
+    h, w = img.shape
+    binary = np.zeros((h, w), dtype=np.uint8)
+
+    for i in range(h):
+        for j in range(w):
+            binary[i][j] = 255 if img[i][j] >= 128 else 0
+
+    return binary
+
+
 def shift(img, dy, dx):
     h, w = img.shape
     out = np.zeros_like(img)
@@ -53,8 +66,9 @@ def main():
     if gray is None:
         raise SystemExit(f"Cannot read {path}")
 
-    # binarize image
-    binary = (gray >= 128).astype(np.uint8)
+    # binarize image (0 / 255), then convert to 0 / 1 for the morphology functions
+    binary_255 = binarize(gray)
+    binary = (binary_255 // 255).astype(np.uint8)
 
     results = {
         "binary":   binary,
