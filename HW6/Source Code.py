@@ -65,22 +65,22 @@ def yokoi_connectivity(img):
 
             # x0 = center (i,j), neighbors in 4-connected + diagonals
             # x0 = (i,j), x1 = (i,j+1), x2 = (i-1,j), x3 = (i,j-1), x4 = (i+1,j)
-            # x5 = (i-1,j+1), x6 = (i-1,j-1), x7 = (i+1,j-1), x8 = (i+1,j+1)
+            # x5 = (i+1,j+1), x6 = (i-1,j+1), x7 = (i-1,j-1), x8 = (i+1,j-1)
             x0 = img[i][j]
             x1 = get_pixel(img, i, j + 1)      # right
             x2 = get_pixel(img, i - 1, j)      # top
             x3 = get_pixel(img, i, j - 1)      # left
             x4 = get_pixel(img, i + 1, j)      # bottom
-            x5 = get_pixel(img, i - 1, j + 1)  # top-right
-            x6 = get_pixel(img, i - 1, j - 1)  # top-left
-            x7 = get_pixel(img, i + 1, j - 1)  # bottom-left
-            x8 = get_pixel(img, i + 1, j + 1)  # bottom-right
+            x5 = get_pixel(img, i + 1, j + 1)  # bottom-right
+            x6 = get_pixel(img, i - 1, j + 1)  # top-right
+            x7 = get_pixel(img, i - 1, j - 1)  # top-left
+            x8 = get_pixel(img, i + 1, j - 1)  # bottom-left
 
             # Compute h for four quadrants
-            a1 = h_func(x0, x1, x5, x2)  # quadrant 1: right, top-right, top
-            a2 = h_func(x0, x2, x6, x3)  # quadrant 2: top, top-left, left
-            a3 = h_func(x0, x3, x7, x4)  # quadrant 3: left, bottom-left, bottom
-            a4 = h_func(x0, x4, x8, x1)  # quadrant 4: bottom, bottom-right, right
+            a1 = h_func(x0, x1, x6, x2)  # quadrant 1: right, top-right, top
+            a2 = h_func(x0, x2, x7, x3)  # quadrant 2: top, top-left, left
+            a3 = h_func(x0, x3, x8, x4)  # quadrant 3: left, bottom-left, bottom
+            a4 = h_func(x0, x4, x5, x1)  # quadrant 4: bottom, bottom-right, right
 
             result[i][j] = f_func(a1, a2, a3, a4)
 
