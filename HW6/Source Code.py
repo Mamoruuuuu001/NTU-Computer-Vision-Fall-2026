@@ -52,14 +52,13 @@ def get_pixel(img, i, j):
         return 0
     return img[i][j]
 
-# Compute Yokoi connectivity number for the entire image
+# Compute Yokoi connectivity number
 def yokoi_connectivity(img):
     h, w = img.shape
-    result = np.full((h, w), -1, dtype=int)  # -1 means background
+    result = np.full((h, w), -1, dtype=int)
 
     for i in range(h):
         for j in range(w):
-            # Only compute for foreground pixels (value 255)
             if img[i][j] == 0:
                 continue
 
@@ -76,7 +75,7 @@ def yokoi_connectivity(img):
             x7 = get_pixel(img, i - 1, j - 1)  # top-left
             x8 = get_pixel(img, i + 1, j - 1)  # bottom-left
 
-            # Compute h for four quadrants
+            # h for four quadrants
             a1 = h_func(x0, x1, x6, x2)  # quadrant 1: right, top-right, top
             a2 = h_func(x0, x2, x7, x3)  # quadrant 2: top, top-left, left
             a3 = h_func(x0, x3, x8, x4)  # quadrant 3: left, bottom-left, bottom
