@@ -1,7 +1,5 @@
 import numpy as np
 import cv2
-import matplotlib.pyplot as plt
-import matplotlib
 
 # Downsampling Lena from 512x512 to 64x64
 def downsample(img, block_size=8):
